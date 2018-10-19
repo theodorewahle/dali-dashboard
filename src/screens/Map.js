@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import GoogleMapReact from "google-map-react";
 import { googleMapsAPI } from "../config.js";
-const BASE_IMAGE_URL = "http://mappy.dali.dartmouth.edu/";
+import MemberMapCard from "../components/Map/MemberMapCard";
 
 class Map extends Component {
   static defaultProps = {
@@ -24,18 +24,8 @@ class Map extends Component {
         >
           {this.props.members.members.map((member, i) => {
             return (
-              <div
-                lat={member.lat_long[0]}
-                lng={member.lat_long[1]}
-                key={i}
-                className="bg-pink aic"
-              >
-                <img
-                  className="h2 mw4"
-                  src={BASE_IMAGE_URL + member.iconUrl}
-                  alt="Logo"
-                />
-                <h1>{member.name}</h1>
+              <div lat={member.lat_long[0]} lng={member.lat_long[1]} key={i}>
+                <MemberMapCard member={member} />
               </div>
             );
           })}
@@ -51,3 +41,7 @@ export default connect(
   mapStateToProps,
   null
 )(Map);
+
+/*
+
+*/
