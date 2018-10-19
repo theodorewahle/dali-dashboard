@@ -2,7 +2,7 @@ import { GET_MEMBERS_SUCCESS, GET_MEMBERS_FAIL, GET_MEMBERS } from "./Actions";
 
 const INITIAL_STATE = {
   user: null,
-  members: {},
+  members: [],
   loading: false
 };
 
