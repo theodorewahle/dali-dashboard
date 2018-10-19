@@ -1,0 +1,44 @@
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Container, Row, Col, Button } from "reactstrap";
+import Search from "./screens/Search";
+import { getMembers } from "./redux/members/Api";
+
+class Main extends Component {
+  componentWillMount() {
+    this.props.getMembers();
+  }
+  render() {
+    console.log(this.props.members);
+    return (
+      <Container>
+        <Row>
+          <Col className="bg-black" xs="8">
+            <h1>filter</h1>
+            <Button>Get Members</Button>
+          </Col>
+          <Col className="bg-orange" xs="4">
+            <Search />
+          </Col>
+        </Row>
+        <Row>
+          <Col className="bg-black" xs="8">
+            <h1>map</h1>
+          </Col>
+          <Col className="bg-orange" xs="4">
+            <h1>sidebar</h1>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
+}
+
+const mapStateToProps = ({ members }) => ({ members });
+const mapDispatchToProps = {
+  getMembers
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Main);
