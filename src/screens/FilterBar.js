@@ -38,7 +38,6 @@ class FilterBar extends Component {
   }
 
   render() {
-    console.log(this.props.members.terms)
     return (
       <Row>
       <Col>
@@ -49,12 +48,10 @@ class FilterBar extends Component {
       </Row>
       <Row>
       <Col>
-      <DropdownFilter filter="Term On" items={this.termsList()} activeItems={this.props.members.terms} select={this.selectToggle}/>
+      <DropdownFilter filter="Terms On" items={this.termsList()} activeItems={this.props.members.terms} select={this.selectToggle}/>
       </Col>
       <Col>
-
       </Col>
-
       </Row>
       </Col>
       </Row>

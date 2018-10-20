@@ -29,7 +29,8 @@ export default class MemberCard extends Component {
   render() {
     const hoveredBlue =this.state.cardHovered ? "#0169D9" : "#007BFF"
     const hoveredGray = this.state.cardHovered ? "#5A6268" : "#6C757D"
-
+    console.log(this.props.member)
+    console.log()
     return (
       <Row
         style={{ backgroundColor: this.props.id%2===0 ? hoveredBlue : hoveredGray }}
@@ -48,7 +49,12 @@ export default class MemberCard extends Component {
               className="br3 mh1 mv1"
               >
             <Col>
-              <h5 className="white">{this.props.member.message}</h5>
+            <Row>
+             {this.props.member.project[0] && (  <p className="pb0 mb0 mt2 white">Project: <strong>{this.props.member.project[0]}</strong></p>)}
+              </Row>
+              <Row>
+              <p className="white mt2">Terms On: <strong>{this.props.member.terms_on.join(", ")}</strong></p>
+              </Row>
               </Col>
           </Row>)}
         </Col>
