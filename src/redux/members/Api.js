@@ -12,7 +12,7 @@ export const getMembers = () => async dispatch => {
   try {
     dispatch({ type: GET_MEMBERS });
     const url =
-      "https://us-east1-hot-button-twitter-search.cloudfunctions.net/wrap-dali-data";
+      "https://us-central1-dalidash-220021.cloudfunctions.net/wrap-data";
     const request = {
       method: "GET",
       url
@@ -28,7 +28,7 @@ export const filterMembers = filter => async dispatch => {
   try {
     dispatch({ type: GET_MEMBERS });
     const url =
-      "https://us-east1-hot-button-twitter-search.cloudfunctions.net/wrap-dali-data";
+      "https://us-central1-dalidash-220021.cloudfunctions.net/wrap-data";
     const request = {
       method: "GET",
       url
