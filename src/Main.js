@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Container, Row, Col, Button } from "reactstrap";
 import Search from "./screens/Search";
+import Sidebar from "./screens/Sidebar";
+
 import Map from "./screens/Map";
 
 import { getMembers } from "./redux/members/Api";
@@ -27,7 +29,7 @@ class Main extends Component {
             <Map />
           </Col>
           <Col className="bg-orange" xs="4">
-            <h1>sidebar</h1>
+            <Sidebar/>
           </Col>
         </Row>
       </Container>
