@@ -1,7 +1,7 @@
 # Getting Started
 
 - To run this app:
-- `git clone `
+- `git clone https://github.com/theodorewahle/dali-dashboard.git`
 - `cd dali-dashboard`
 - `npm install`
 - `npm start`
