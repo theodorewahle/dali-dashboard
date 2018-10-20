@@ -14,17 +14,17 @@ class Main extends Component {
   }
   render() {
     return (
-      <Container>
+      <Container >
         <Row>
           <Col className="bg-pink" xs="8">
             <h1>filter</h1>
           </Col>
-          <Col className="bg-purple" xs="4">
+          <Col  xs="4">
             <Search />
           </Col>
         </Row>
         <Row>
-          <Col className="bg-yellow" xs="8">
+          <Col xs="8">
             <Map />
           </Col>
           <Col  xs="4">

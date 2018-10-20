@@ -1,8 +1,10 @@
 import axios from "axios";
-import { getMembersSuccess, getMembersFail, GET_MEMBERS } from "./Actions";
+import {
+  getMembersSuccess,
+  getMembersFail,
+  filterMembersSuccess,  GET_MEMBERS } from "./Actions";
 
-export const getMembers = user => async dispatch => {
-  console.log("got members");
+export const getMembers = () => async dispatch => {
   try {
     dispatch({ type: GET_MEMBERS });
     const url = "http://mappy.dali.dartmouth.edu/members.json";
@@ -11,11 +13,30 @@ export const getMembers = user => async dispatch => {
       url
     };
     const response = await axios(request);
-    console.log(response);
-
     dispatch(getMembersSuccess({ members: response.data }));
   } catch (e) {
-    console.log(e);
+    dispatch(getMembersFail(e));
+  }
+};
+
+export const filterMembers = filter => async dispatch => {
+  try {
+    dispatch({ type: GET_MEMBERS });
+    const url = "http://mappy.dali.dartmouth.edu/members.json";
+    const request = {
+      method: "GET",
+      url
+    };
+    const response = await axios(request);
+    console.log(filter)
+    const filteredMembers = response.data.filter(member => {
+      const name = member.name.toLowerCase()
+      const term = filter.toLowerCase()
+      return name.startsWith(term)
+    }
+    );
+    dispatch(filterMembersSuccess({ members: filteredMembers }));
+  } catch (e) {
     dispatch(getMembersFail(e));
   }
 };
