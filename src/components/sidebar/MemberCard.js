@@ -35,6 +35,7 @@ export default class MemberCard extends Component {
         }}
         onMouseEnter={this.toggleHover}
         onMouseLeave={this.toggleHover}
+        className="mb3"
       >
         <Col>
           <Row onClick={this.toggle} style={styles.shadowRow}>
@@ -43,7 +44,7 @@ export default class MemberCard extends Component {
             </Col>
           </Row>
           {this.state.cardOpen && (
-            <Row className="br3 mh1 mv1">
+            <Row className="mh1 mv1">
               <Col>
                 <Row>
                   {this.props.member.project[0] && (
@@ -68,5 +69,5 @@ export default class MemberCard extends Component {
 }
 
 const styles = {
-  shadowRow: { boxShadow: " 2px 2px 8px 0px rgba( 0, 0, 0, 0.2 )" }
+  shadowRow: { boxShadow: "2px 2px 4px 2px rgba( 0, 0, 0, 0.2 )" }
 };

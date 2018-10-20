@@ -11,7 +11,8 @@ import {
 export const getMembers = () => async dispatch => {
   try {
     dispatch({ type: GET_MEMBERS });
-    const url = "http://mappy.dali.dartmouth.edu/members.json";
+    const url =
+      "https://us-east1-hot-button-twitter-search.cloudfunctions.net/wrap-dali-data";
     const request = {
       method: "GET",
       url
@@ -26,7 +27,8 @@ export const getMembers = () => async dispatch => {
 export const filterMembers = filter => async dispatch => {
   try {
     dispatch({ type: GET_MEMBERS });
-    const url = "http://mappy.dali.dartmouth.edu/members.json";
+    const url =
+      "https://us-east1-hot-button-twitter-search.cloudfunctions.net/wrap-dali-data";
     const request = {
       method: "GET",
       url

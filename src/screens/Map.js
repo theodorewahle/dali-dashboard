@@ -7,15 +7,14 @@ import MapMarker from "../components/map/MapMarker";
 class Map extends Component {
   static defaultProps = {
     center: {
-      lat: 20,
-      lng: -65
+      lat: 32,
+      lng: -92
     },
-    zoom: 3
+    zoom: 4
   };
 
   render() {
     return (
-      // Important! Always set the container height explicitly
       <div style={{ height: "100vh", width: "100%" }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: googleMapsAPI }}
