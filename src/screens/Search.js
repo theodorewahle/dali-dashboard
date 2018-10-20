@@ -17,7 +17,7 @@ class Search extends Component {
 
   render() {
     return (
-      <Row className="mt2 mb3">
+      <Row className="mt2 mb3 ">
         <Col>
           <Row>
             <Col>

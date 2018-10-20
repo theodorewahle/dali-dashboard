@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Col } from "reactstrap";
 import MemberCard from "../components/sidebar/MemberCard";
+
 class Sidebar extends Component {
   render() {
     return (

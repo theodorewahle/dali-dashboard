@@ -15,17 +15,17 @@ class Main extends Component {
   }
   render() {
     return (
-      <Container >
-      <Row>
-      <Col>
-       <h1>DALI Dashboard</h1>
-      </Col>
-      </Row>
+      <Container>
         <Row>
-          <Col  xs="8">
-            <FilterBar/>
+          <Col>
+            <h1>DALI Dashboard</h1>
           </Col>
-          <Col  xs="4">
+        </Row>
+        <Row>
+          <Col xs="8">
+            <FilterBar />
+          </Col>
+          <Col xs="4">
             <Search />
           </Col>
         </Row>
@@ -33,8 +33,8 @@ class Main extends Component {
           <Col xs="8">
             <Map />
           </Col>
-          <Col  xs="4">
-            <Sidebar/>
+          <Col xs="4">
+            <Sidebar />
           </Col>
         </Row>
       </Container>

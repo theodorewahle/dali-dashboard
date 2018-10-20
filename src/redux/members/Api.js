@@ -1,10 +1,12 @@
 import axios from "axios";
-import _ from 'lodash'
+import _ from "lodash";
 import {
   getMembersSuccess,
   getMembersFail,
   selectTermSuccess,
-  filterMembersSuccess,  GET_MEMBERS } from "./Actions";
+  filterMembersSuccess,
+  GET_MEMBERS
+} from "./Actions";
 
 export const getMembers = () => async dispatch => {
   try {
@@ -31,11 +33,10 @@ export const filterMembers = filter => async dispatch => {
     };
     const response = await axios(request);
     const filteredMembers = response.data.filter(member => {
-      const name = member.name.toLowerCase()
-      const term = filter.toLowerCase()
-      return name.startsWith(term)
-    }
-    );
+      const name = member.name.toLowerCase();
+      const term = filter.toLowerCase();
+      return name.startsWith(term);
+    });
     dispatch(filterMembersSuccess({ members: filteredMembers }));
   } catch (e) {
     dispatch(getMembersFail(e));
@@ -44,9 +45,9 @@ export const filterMembers = filter => async dispatch => {
 
 export const selectTerm = (terms, members) => async dispatch => {
   const membersOn = members.filter(member => {
-    const termsOn = _.intersection(member.terms_on, terms)
-    return termsOn.length > 0
-  })
+    const termsOn = _.intersection(member.terms_on, terms);
+    return termsOn.length > 0;
+  });
 
-  dispatch(selectTermSuccess({ terms, members: membersOn}))
-}
+  dispatch(selectTermSuccess({ terms, members: membersOn }));
+};
