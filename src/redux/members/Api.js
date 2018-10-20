@@ -1,7 +1,9 @@
 import axios from "axios";
+import _ from 'lodash'
 import {
   getMembersSuccess,
   getMembersFail,
+  selectTermSuccess,
   filterMembersSuccess,  GET_MEMBERS } from "./Actions";
 
 export const getMembers = () => async dispatch => {
@@ -28,7 +30,6 @@ export const filterMembers = filter => async dispatch => {
       url
     };
     const response = await axios(request);
-    console.log(filter)
     const filteredMembers = response.data.filter(member => {
       const name = member.name.toLowerCase()
       const term = filter.toLowerCase()
@@ -40,3 +41,12 @@ export const filterMembers = filter => async dispatch => {
     dispatch(getMembersFail(e));
   }
 };
+
+export const selectTerm = (terms, members) => async dispatch => {
+  const membersOn = members.filter(member => {
+    const termsOn = _.intersection(member.terms_on, terms)
+    return termsOn.length > 0
+  })
+
+  dispatch(selectTermSuccess({ terms, members: membersOn}))
+}

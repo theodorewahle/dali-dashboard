@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import GoogleMapReact from "google-map-react";
 import { googleMapsAPI } from "../config.js";
-import MemberMapCard from "../components/Map/MemberMapCard";
+import MapMarker from "../components/map/MapMarker";
 
 class Map extends Component {
   static defaultProps = {
@@ -25,7 +25,7 @@ class Map extends Component {
           {this.props.members.members.map((member, i) => {
             return (
               <div lat={member.lat_long[0]} lng={member.lat_long[1]} key={i}>
-                <MemberMapCard member={member} />
+                <MapMarker member={member} />
               </div>
             );
           })}

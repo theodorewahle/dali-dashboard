@@ -27,7 +27,6 @@ export default class MemberCard extends Component {
 
 
   render() {
-    console.log(this.props.member)
     const hoveredBlue =this.state.cardHovered ? "#0169D9" : "#007BFF"
     const hoveredGray = this.state.cardHovered ? "#5A6268" : "#6C757D"
 
@@ -59,5 +58,5 @@ export default class MemberCard extends Component {
 }
 
 const styles = {
-  shadowRow : { "box-shadow": " 2px 2px 8px 0px rgba( 0, 0, 0, 0.2 )"}
+  shadowRow : { "boxShadow": " 2px 2px 8px 0px rgba( 0, 0, 0, 0.2 )"}
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux'
-import { Input, InputGroup, Button, Row, Col } from "reactstrap";
+import { Input, Row, Col } from "reactstrap";
 
 import {filterMembers} from '../redux/members/Api'
 
@@ -9,9 +9,6 @@ class Search extends Component {
     super(props);
 
     this.submitSearch = this.submitSearch.bind(this);
-    this.state = {
-      term: ""
-    };
   }
 
   submitSearch(term) {
@@ -25,7 +22,7 @@ class Search extends Component {
         <Col>
         <Row >
           <Col>
-          <h3>DALI Members</h3>
+          <h3>Search</h3>
           </Col>
           </Row>
           <Row>

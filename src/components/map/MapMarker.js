@@ -22,11 +22,11 @@ class MemberMapCard extends Component {
   render() {
     const { member } = this.props;
     return (
-      <Button id={member.name} onClick={() => console.log(member.name)}>
+      <Button  id={member.name} onClick={() => console.log(member.name)}>
         <Row>
           <Col>
             <img
-              className="h2 mw4 bg-green"
+              className="h3 mw4"
               src={BASE_IMAGE_URL + member.iconUrl}
               alt="Logo"
             />
@@ -39,7 +39,7 @@ class MemberMapCard extends Component {
           target={member.name}
           toggle={this.toggle}
         >
-          {member.name}
+        {`"${member.message}"`}
         </Tooltip>
       </Button>
     );

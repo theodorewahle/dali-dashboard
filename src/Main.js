@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
 import Search from "./screens/Search";
 import Sidebar from "./screens/Sidebar";
+import FilterBar from "./screens/FilterBar";
 
 import Map from "./screens/Map";
 
@@ -15,9 +16,14 @@ class Main extends Component {
   render() {
     return (
       <Container >
+      <Row>
+      <Col>
+       <h1>DALI Dashboard</h1>
+      </Col>
+      </Row>
         <Row>
-          <Col className="bg-pink" xs="8">
-            <h1>filter</h1>
+          <Col  xs="8">
+            <FilterBar/>
           </Col>
           <Col  xs="4">
             <Search />
