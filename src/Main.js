@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Container, Row, Col, Button } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 import Search from "./screens/Search";
 import Sidebar from "./screens/Sidebar";
 
@@ -18,7 +18,6 @@ class Main extends Component {
         <Row>
           <Col className="bg-pink" xs="8">
             <h1>filter</h1>
-            <Button>Get Members</Button>
           </Col>
           <Col className="bg-purple" xs="4">
             <Search />
@@ -28,7 +27,7 @@ class Main extends Component {
           <Col className="bg-yellow" xs="8">
             <Map />
           </Col>
-          <Col className="bg-orange" xs="4">
+          <Col  xs="4">
             <Sidebar/>
           </Col>
         </Row>

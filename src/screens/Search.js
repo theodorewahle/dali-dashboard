@@ -8,7 +8,7 @@ class Search extends Component {
         <Col>
           <h3>DALI Members</h3>
           <InputGroup>
-            <Input placeholder="last name" />
+            <Input placeholder="name" />
           </InputGroup>
           <Button>Search</Button>
         </Col>

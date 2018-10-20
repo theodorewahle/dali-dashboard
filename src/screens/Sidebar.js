@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
 import {connect } from 'react-redux'
-
+import { Col } from 'reactstrap'
+import MemberCard from '../components/sidebar/MemberCard'
 class Sidebar extends Component {
   render() {
     return (
-      <div style={styles.scrollbar}>
+      <Col style={styles.scrollbar}>
       {this.props.members.members.map((member, i) => {
         return (
-          <h1 key={i}>{member.name}</h1>
+          <MemberCard key={i} id={i} member={member}/>
         )
       })}
-      </div>
+      </Col>
     )
   }
  }
