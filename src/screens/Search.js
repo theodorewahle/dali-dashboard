@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import {connect} from 'react-redux'
+import { connect } from "react-redux";
 import { Input, Row, Col } from "reactstrap";
 
-import {filterMembers} from '../redux/members/Api'
+import { filterMembers } from "../redux/members/Api";
 
 class Search extends Component {
   constructor(props) {
@@ -12,22 +12,21 @@ class Search extends Component {
   }
 
   submitSearch(term) {
-    this.props.filterMembers(term.target.value)
+    this.props.filterMembers(term.target.value);
   }
 
   render() {
-
     return (
       <Row className="mt2 mb3">
         <Col>
-        <Row >
-          <Col>
-          <h3>Search</h3>
-          </Col>
+          <Row>
+            <Col>
+              <h3>Search</h3>
+            </Col>
           </Row>
           <Row>
             <Col>
-            <Input onChange={this.submitSearch} placeholder="name" />
+              <Input onChange={this.submitSearch} placeholder="name" />
             </Col>
           </Row>
         </Col>
