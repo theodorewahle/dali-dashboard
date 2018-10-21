@@ -1,6 +1,9 @@
 # Live Demo
 - See it [here](https://dalisupp222444.appspot.com/).
 
+# Preview
+
+![alt text](https://github.com/theodorewahle/dali-dashboard/blob/master/Screen%20Shot%202018-10-20%20at%207.59.52%20PM.png)
 
 # Getting Started
 
