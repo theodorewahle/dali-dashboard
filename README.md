@@ -21,3 +21,14 @@
 - Once you've created your key, create the file `config.js`
 - In `config.js`, add one line: `export const googleMapsAPI = YOUR_API_KEY`
 - Make sure your `config.js` file is in the `src` folder, on the same level as `App.js`
+
+# Quick Note on Data Sourcing
+
+- The original data was provided here: 
+- `http://mappy.dali.dartmouth.edu/members.json`
+- That HTTP link didn't work well with `axios`
+- So I wrapped it in a Cloud Function:
+- In the source code, you can see me making requests to:
+- `https://us-central1-dalidash-220021.cloudfunctions.net/wrap-data`
+- That is just the URL of the wrapper function
+
