@@ -1,5 +1,5 @@
 # Live Demo
-- See it [here](https://dalisupp222444.appspot.com/).
+- See it [here](https://dalisupp222444.appspot.com/)
 
 # Preview
 
